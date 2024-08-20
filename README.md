@@ -5,7 +5,7 @@ Some applications such as vscode and zed automatically make themselves the defau
 1. Copy `99-fixmime.hook` to `/etc/pacman.d/hooks/`
 2. Edit fixmime to open your desired app of choice, with backups
     - Unless you are ok with nautilus, which is what I use
-3. Put `fixmime` somewhere in your path
+3. Put `fixmime` somewhere in your path, (might have to `chmod a+x` it)
 4. Optionally, run the script (with sudo) to fix it for the first time, after that it will automatically do it on pacman installs/updates
 
 ## Note
