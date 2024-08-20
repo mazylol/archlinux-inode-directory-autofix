@@ -1,6 +1,10 @@
 # Archlinux inode/directory Autofix
 Some applications such as vscode and zed automatically make themselves the default app to open files. This is incredibly annoying. It is an easy fix but you have to do it every time pacman updates mimeinfo.cache file. This python script and accompanying pacman hook automatically do it for you.
 
+## Dependencies
+1. Python
+2. SystemD (probably pretty easy to modify the hook for openrc/runit though)
+
 ## Setup
 1. Copy `99-fixmime.hook` to `/etc/pacman.d/hooks/`
 2. Edit fixmime to open your desired app of choice, with backups
