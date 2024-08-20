@@ -1,0 +1,11 @@
+[Trigger]
+Operation=Install
+Operation=Upgrade
+Type=Package
+Target=*
+
+[Action]
+Description=Autofix mimeinfo.cache inode/directory
+When=PostTransaction
+Exec=/usr/bin/systemd-run --on-active=5 /usr/local/bin/fixmime
+

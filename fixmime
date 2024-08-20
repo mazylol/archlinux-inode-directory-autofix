@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+
+import re
+
+def replace_line_in_file(lines_param, line_number, new_text):
+    if 0 <= line_number < len(lines_param):
+        lines_param[line_number] = new_text + '\n'
+    else:
+        print(f"Error: Line number {line_number} is out of range.")
+    return lines_param
+
+p = re.compile(r'(inode/directory)+')
+
+file_path = "/usr/share/applications/mimeinfo.cache"
+with open(file_path, 'r') as file:
+    lines = file.readlines()
+
+counter = 0
+
+for i, line in enumerate(lines):
+    if p.search(line):
+        lines = replace_line_in_file(lines, i, "inode/directory=org.gnome.Nautilus.desktop;thunar.desktop;kitty-open.desktop")
+        break
+
+with open(file_path, 'w') as file:
+    file.writelines(lines)
+
